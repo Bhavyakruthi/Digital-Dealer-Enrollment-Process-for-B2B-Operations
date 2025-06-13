@@ -1,0 +1,69 @@
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-section {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.progress {
+    height: 20px;
+}
+
+.pagination {
+    margin-bottom: 30px;
+}
+
+#stepPagination {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#stepPagination .page-item {
+    flex: 1 1 auto;
+    min-width: 100px;
+    margin: 5px;
+    text-align: center;
+}
+
+.page-item:hover{
+    cursor: pointer;
+}
+
+.star{
+    color:red;
+}
+
+.breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item[role="button"] {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.d-flex.align-items-center.gap-2 {
+  flex-wrap: wrap;
+}
+

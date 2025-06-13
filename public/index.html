@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HBL Engineering Ltd - Customer Information Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-md mt-4 mb-4">
+        <h2 class="text-center mb-4">HBL Engineering Ltd - Customer Information Sheet</h2>
+        <!-- Progress Bar -->
+        <div class="progress p-1 mb-5">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="progressBar"
+                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+        <!-- Pagination / Navigation Step Indicators -->
+        <ul class="pagination" id="stepPagination">
+            <li class="page-item active"><a class="page-link">Instructions</a></li>
+            <li class="page-item"><a class="page-link">Sales Person</a></li>
+            <li class="page-item"><a class="page-link">Customer Info</a></li>
+            <li class="page-item"><a class="page-link">Company Profile</a></li>
+            <li class="page-item"><a class="page-link">Addresses</a></li>
+            <li class="page-item"><a class="page-link">Bank & Suppliers</a></li>
+            <li class="page-item"><a class="page-link">Declaration</a></li>
+            <li class="page-item"><a class="page-link">Sales Info</a></li>
+            <li class="page-item"><a class="page-link">Accounts Info</a></li>
+        </ul>
+        <form id="customerForm">
+            <!-- Step 1: Instructions -->
+            <div class="form-step form-section ">
+                <h4 class="mb-3">Instructions</h4>
+                <p>
+                <ol>
+                    <li>Sales person to fill in the following details from the customer with their signature & seal and
+                        send to Sales H.O/ CCO.</li>
+                    <li>Attach documents as per "Documents Required".</li>
+                </ol>
+                </p>
+                <div class="form-navigation">
+                    <div class="offcanvas offcanvas-start" style="width:50%" id="demo">
+                        <div class="offcanvas-header">
+                            <h1 class="offcanvas-title">Required Documents</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <p><strong> 1. Should accompany below documents</strong></p>
+                            <table class="table table-bordered table-hover text-center align-middle">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">S.No.</th>
+                                        <th rowspan="2">Particulars</th>
+                                        <th rowspan="2">Govt</th>
+                                        <th colspan="3">Non-Govt</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Prop / P.S</th>
+                                        <th>Pvt Ltd</th>
+                                        <th>Others</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Company’s Registration Certificate / Partnership Deed</td>
+                                        <td>-</td>
+                                        <td>*</td>
+                                        <td>YES</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>TAN & PAN Copy</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>YES</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>TIN No. Certificate</td>
+                                        <td>-</td>
+                                        <td>*</td>
+                                        <td>YES</td>
+                                        <td>*</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>SERVICE Tax Registration Certificate</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>NO</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>BLANK CHEQUE INSTRUMENT - CROSSED WITH SIGNING AUTHORITY MENTIONED</td>
+                                        <td>-</td>
+                                        <td></td>
+                                        <td>YES</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>Proof of Address for both Registered Billed Address & Despatch address, if
+                                            both are different</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>YES</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>2 Latest Passport Photos of M.D / Managing Partner / Proprietor</td>
+                                        <td>-</td>
+                                        <td></td>
+                                        <td>NO</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Proof of residential address of M.D / Managing Partner / Proprietor</td>
+                                        <td>-</td>
+                                        <td></td>
+                                        <td>NO</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><em>* As Applicable</em></p>
+
+                            <p><strong> 2. Add additional sheets if required</strong></p>
+                            <ul>
+                                <li>MoA & AoA of the company</li>
+                                <li>Audited Financial reports for last 3 FY's</li>
+                                <li>Acknowledged / Certified copies of I.T returns for last 3 FY's</li>
+                                <li>Bank Statement of Business A/c for last 6 months</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#demo">Documents Required</button>
+                    <button type="button" class="btn btn-primary next-btn">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Sales Person -->
+            <div class="form-step form-section ">
+                <h4 class="mb-3">Sales Person Details</h4>
+                <div class="mb-3">
+                    <label for="sales_name" class="form-label">Name<span class="star"> *</span></label>
+                    <input type="text" id="sales_name" class="form-control" name="sales_name" placeholder="E.g.: John Doe"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="emp_id" class="form-label">Emp ID<span class="star"> *</span></label>
+                    <input type="text" id="emp_id" class="form-control" name="emp_id" placeholder="E.g.: EMP123456" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sales_email" class="form-label">Email<span class="star"> *</span></label>
+                    <input type="email" id="sales_email" class="form-control" name="sales_email"
+                        placeholder="E.g.: johndoe@gmail.com" required>
+                </div>
+                <div id="salesPersonErrors" class="error-messages text-danger mb-3" style="display: none;"></div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                    <button type="button" class="btn btn-primary next-btn">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Customer Information -->
+            <div class="form-step form-section ">
+                <h4 class="mb-3">Customer Information</h4>
+                <div class="mb-3">
+                    <label for="customer_name" class="form-label">NAME OF THE CUSTOMER<span class="star">
+                            *</span></label>
+                    <input type="text" id="customer_name" class="form-control" name="customer_name"
+                        placeholder="E.g.: Jane Smith" required>
+                </div>
+                <div class="mb-3">
+                    <label for="company_name" class="form-label">REGISTERED NAME OF THE COMPANY<span class="star">
+                            *</span></label>
+                    <input type="text" id="company_name" class="form-control" name="company_name"
+                        placeholder="E.g.: Acme Corp Ltd" required>
+                </div>
+                <div class="mb-3">
+                    <label for="commercial_name" class="form-label">COMMERCIAL NAME</label>
+                    <input type="text" id="commercial_name" class="form-control"
+                        placeholder="(if different) E.g.: Acme Enterprises" name="commercial_name">
+                </div>
+                <div class="mb-3">
+                    <label for="customer_address" class="form-label">ADDRESS<span class="star"> *</span></label>
+                    <div class="form-floating">
+                        <textarea class="form-control" id="customer_address" name="customer_address" placeholder="Address"
+                            required></textarea>
+                        <label for="customer_address">Complete Address</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="customerType" class="form-label">TYPE OF CUSTOMER <small>(choose one)</small><span
+                            class="star">
+                            *</span></label>
+                    <select id="customerType" name="customerType" class="form-select" required>
+                        <option value="">Select type</option>
+                        <option value="Manufacturer">Manufacturer</option>
+                        <option value="Trader">Trader</option>
+                        <option value="Service">Service</option>
+                        <option value="Distributor">Distributor</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="mb-3" id="otherCustomerTypeDiv" style="display: none;">
+                    <label for="otherCustomerType" class="form-label">Please specify type of customer:</label>
+                    <input type="text" id="otherCustomerType" name="otherCustomerType" class="form-control"
+                        placeholder="Enter customer type">
+                </div>
+                <div class="mb-3">
+                    <label for="Category" class="form-label">CATEGORY <small>(choose one)</small><span class="star">
+                            *</span> </label>
+                    <select id="Category" name="Category" class="form-select" required>
+                        <option value="">Select type</option>
+                        <option value="PSU">PSU</option>
+                        <option value="Quasi Govt">Quasi Govt</option>
+                        <option value="Pvt (Large)">Pvt (Large)</option>
+                        <option value="Pvt (Med)">Pvt (Med)</option>
+                        <option value="Pvt (Small)">Pvt (Small)</option>
+                        <option value="Telecom">Telecom</option>
+                        <option value="Railway">Railway</option>
+                        <option value="Defence">Defence</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="pan" class="form-label">PAN <abbr title="Number">No.<span class="star">
+                                *</span></abbr></label>
+                    <input id="pan" type="text" class="form-control" name="pan" maxlength="10" placeholder="E.g.: ABCDE1234F"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="gst" class="form-label">GST <abbr title="Number">No.<span class="star">
+                                *</span></abbr></label>
+                    <input id="gst" type="text" class="form-control" name="gst" maxlength="15" placeholder="E.g.: 22ABCDE1234F1Z5"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="year_incorporation" class="form-label">Year of Incorporation<span class="star">
+                            *</span></label>
+                    <input id="year_incorporation" type="text" pattern="[0-9]{4}" maxlength="4" class="form-control"
+                        name="year_incorporation" placeholder="Enter year" required>
+                </div>
+                <div class="mb-3">
+                    <label for="area" class="form-label">Area<span class="star"> *</span> </label>
+                    <input id="area" type="text" class="form-control" name="area" placeholder="E.g. Industrial Zone"
+                        maxlength="20" required>
+                </div>
+                <div class="mb-3">
+                    <label for="range" class="form-label">Range<span class="star"> *</span> </label>
+                    <input id="range" type="text" class="form-control" name="range" placeholder="E.g. Sector 5"
+                        maxlength="20" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Association_HBL" class="form-label">Association with HBL<span class="star"> *</span>
+                    </label>
+                    <input id="Association_HBL" type="date" class="form-control" name="Association_HBL" required>
+                </div>
+                <div id="customerInfoErrors" class="error-messages text-danger mb-4" style="display: none;"></div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                    <button type="button" class="btn btn-primary next-btn">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Company Info -->
+            <div class="form-step form-section ">
+                <h4 class="mb-3">Company Profile</h4>
+                <div class="mb-3">
+                    <label for="partner_company_name" class="form-label">Name of Directors of the Company<span class="star"> *</span></label>
+                    <input id="partner_company_name" type="text" class="form-control" name="partner_company_name"
+                        placeholder="Directors/ Partners/ Proprietor of the Company" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Status" class="form-label">Status of the Company<span class="star">
+                            *</span></label>
+                    <select id="Status" name="Status" class="form-select" required>
+                        <option value="">Select type</option>
+                        <option value="Proprietorship">Proprietorship</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Pvt Limited Co">Pvt Limited Co</option>
+                        <option value="Public Limited Co">Public Limited Co</option>
+                        <option value="HUF">HUF</option>
+                        <option value="AOP">AOP</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label d-inline-block">Annual T.O of the Company (lacs)</label>
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <div class="p-2" style="flex:1;">
+                            <label for="fy_20_21" class="form-label d-inline-block w-auto me-2">FY 20-21<span
+                                    class="star">
+                                    *</span></label>
+                            <input type="number" class="form-control d-inline-block w-auto" id="fy_20_21"
+                                placeholder="E.g.: 50050" name="fy_20_21" required>
+                        </div>
+                        <div class="p-2" style="flex:1;">
+                            <label for="fy_21_22" class="form-label d-inline-block w-auto me-2">FY 21-22<span
+                                    class="star">
+                                    *</span></label>
+                            <input type="number" class="form-control d-inline-block w-auto" id="fy_21_22"
+                                placeholder="E.g.: 60075" name="fy_21_22" required>
+                        </div>
+                        <div class="p-2" style="flex:1;">
+                            <label for="fy_22_23" class="form-label d-inline-block w-auto me-2">FY 22-23<span
+                                    class="star">
+                                    *</span></label>
+                            <input type="number" class="form-control d-inline-block w-auto" id="fy_22_23"
+                                placeholder="E.g.: 75025" name="fy_22_23" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="incorporation_year_company" class="form-label">Incorporation Year of the Company<span
+                            class="star"> *</span> </label>
+                    <input id="incorporation_year_company" type="text" pattern="[0-9]{4}" maxlength="4"
+                        class="form-control" placeholder="Enter year" name="incorporation_year_company" required>
+                </div>
+                <div class="mb-3">
+                    <label for="branches_name" class="form-label">Branches / Offices across India</label>
+                    <input type="text" id="branches_name" class="form-control" name="branches_name" maxlength="20"
+                        placeholder="(if any) E.g.: Mumbai">
+                </div>
+                <div class="mb-3">
+                    <label for="sister_Company_name" class="form-label">Sister Companies or Group Companies</label>
+                    <input type="text" class="form-control" id="sister_Company_name" name="sister_Company_name"
+                        maxlength="20" placeholder="Enter if any already in dealing with HBL E.g.: Beta Corp">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Photo<span class="star"> *</span></label>
+                    <div class="form-floating">
+                        <input type="file" class="form-control p-5" name="photo" id="photo" accept="image/*" required>
+                        <label for="photo">Passport size photo of M.D/Proprietor/Partner</label>
+                    </div>
+                </div>
+                <div id="companyProfileErrors" class="error-messages mb-3" style="display: none;"></div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                    <button type="button" class="btn btn-primary next-btn">Next</button>
+                </div>
+            </div>
+
+            <!-- STEP 5: Address -->
+            <div class="form-step" id="address-step">
+                <div class="d-flex justify-content-between align-items-center mb-3 form-section">
+                    <h4 class="mb-0">Address</h4>
+                    <ul class="breadcrumb mb-0">
+                        <li class="breadcrumb-item active" id="breadcrumb1" role="button">1</li>
+                        <li class="breadcrumb-item" id="breadcrumb2" role="button">2</li>
+                    </ul>
+                </div>
+                <!-- Address 1 -->
+                <div class="address1 form-section container">
+                    <div class="mb-3">
+                        <label for="business_address1" class="form-label">CUSTOMER ADDRESS<span
+                                class="star">*</span></label>
+                        <div class="form-floating">
+                            <textarea id="business_address1" class="form-control" name="business_address1" required
+                                placeholder="e.g., 123 Main St, Suite 100"></textarea>
+                            <label for="business_address1">Registered Business Address</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="pin1" class="form-label">PIN <span class="star">*</span></label>
+                            <input type="tel" class="form-control" pattern="[0-9]{6}" maxlength="6" id="pin1"
+                                name="pin1" required placeholder="e.g., 123456" title="Please enter a 6-digit PIN">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="city1" class="form-label">CITY <span class="star">*</span></label>
+                            <input type="text" class="form-control" id="city1" name="city1" required
+                                placeholder="e.g., New York">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="state1" class="form-label">STATE <span class="star">*</span></label>
+                            <input type="text" class="form-control" id="state1" name="state1" required
+                                placeholder="e.g., NY">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="country1" class="form-label">COUNTRY <span class="star">*</span></label>
+                            <input type="text" class="form-control" id="country1" name="country1" required
+                                placeholder="e.g., USA">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact1" class="form-label">CONTACT PERSON<span class="star">*</span></label>
+                        <input id="contact1" type="text" class="form-control" name="contact1"
+                            placeholder="e.g., John Doe" required maxlength="20">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone1" class="form-label">PHONE NUMBER<span class="star">*</span></label>
+                        <input id="phone1" type="tel" pattern="[6-9][0-9]{9}" class="form-control" name="phone1"
+                            placeholder="e.g., 9876543210" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fax1" class="form-label">FAX</label>
+                        <input id="fax1" type="tel" class="form-control" name="fax1" placeholder="e.g., +123-456-7890">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email_id1" class="form-label">EMAIL<span class="star">*</span></label>
+                        <input type="email" id="email_id1" class="form-control" name="email_id1"
+                            placeholder="e.g., abc@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="designation1" class="form-label">DESIGNATION<span class="star">*</span></label>
+                        <input id="designation1" type="text" class="form-control" name="designation1"
+                            placeholder="e.g., Manager" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobile1" class="form-label">MOBILE<span class="star">*</span></label>
+                        <input id="mobile1" type="tel" pattern="[6-9][0-9]{9}" class="form-control"
+                            placeholder="e.g., 9876543210" name="mobile1" required>
+                    </div>
+                    <div id="address1Errors" class="error-messages text-danger mb-3" style="display: none;"></div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextToAddress2">Next</button>
+                    </div>
+                </div>
+                <!-- Address 2 -->
+                <div class="address2 form-section container" style="display: none;">
+                    <div class="mb-3 form-navigation">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="differentShipping" name="differentShipping">
+                            <label class="form-check-label" for="differentShipping">Shipping Address is Same as Registered Address</label>
+                        </div>
+                        <button type="button" class="btn btn-secondary mt-2" id="copyAddress">Copy Address 1</button>
+                    </div>
+                    <div id="address2Errors" class="error-messages text-danger mb-3" style="display: none;"></div>
+                    <div class="mb-3">
+                        <label for="business_address2" class="form-label">CUSTOMER ADDRESS</label>
+                        <div class="form-floating">
+                            <textarea id="business_address2" class="form-control" name="business_address2"
+                                placeholder="e.g., 456 Elm St, Apt 200"></textarea>
+                            <label for="business_address2">Shipping Address (if different)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="pin2" class="form-label">PIN</label>
+                            <input type="tel" class="form-control" pattern="[0-9]{6}" maxlength="6" id="pin2"
+                                name="pin2" placeholder="e.g., 123456" title="Please enter a 6-digit PIN">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="city2" class="form-label">CITY </label>
+                            <input type="text" class="form-control" id="city2" name="city2"
+                                placeholder="e.g., New York">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="state2" class="form-label">STATE</label>
+                            <input type="text" class="form-control" id="state2" name="state2" placeholder="e.g., NY">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="country2" class="form-label">COUNTRY</label>
+                            <input type="text" class="form-control" id="country2" name="country2"
+                                placeholder="e.g., USA">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact2" class="form-label">CONTACT PERSON</label>
+                        <input id="contact2" type="text" class="form-control" name="contact2"
+                            placeholder="e.g., Jane Smith" maxlength="20">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone2" class="form-label">PHONE NUMBER</label>
+                        <input id="phone2" type="tel" pattern="[6-9][0-9]{9}" class="form-control" name="phone2"
+                            placeholder="e.g., 9876543210">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fax2" class="form-label">FAX</label>
+                        <input id="fax2" type="tel" class="form-control" name="fax2" placeholder="e.g., +123-456-7890">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email_id2" class="form-label">EMAIL</label>
+                        <input type="email" id="email_id2" class="form-control" name="email_id2"
+                            placeholder="e.g., abc@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="designation2" class="form-label">DESIGNATION</label>
+                        <input id="designation2" type="text" class="form-control" name="designation2"
+                            placeholder="e.g., Supervisor">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mobile2" class="form-label">MOBILE</label>
+                        <input id="mobile2" type="tel" pattern="[6-9][0-9]{9}" class="form-control"
+                            placeholder="e.g., 9876543210" name="mobile2">
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="backToAddress1">Previous</button>
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 6: Bank & Suppliers -->
+            <div class="form-step">
+                <div class="form-section bank-details container">
+                    <h4 class="mb-3">Bank Details</h4>
+                    <div class="mb-3">
+                        <label for="bank_name" class="form-label">NAME OF THE BANK<span class="star"> *</span></label>
+                        <input id="bank_name" type="text" class="form-control" name="bank_name" placeholder="E.g. SBI Bank"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="acc_number" class="form-label">A/C NUMBER<span class="star">
+                                *</span></label>
+                        <input id="acc_number" type="text" class="form-control" name="acc_number"
+                            placeholder="E.g.: 123456789012" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="acc_type" class="form-label">ACC TYPE<span class="star"> *</span></label>
+                        <input id="acc_type" type="text" class="form-control" name="acc_type"
+                            placeholder="E.g.: Savings" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="branch_name" class="form-label">BRANCH NAME<span class="star">
+                                *</span></label>
+                        <input id="branch_name" type="text" class="form-control" name="branch_name"
+                            placeholder="E.g.: Main Branch" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ifsc" class="form-label">IFSC CODE<span class="star"> *</span></label>
+                        <input id="ifsc" type="text" class="form-control" name="ifsc" placeholder="E.g.: SBIN0123456" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="limits" class="form-label">LIMITS </label>
+                        <input id="limits" type="text" class="form-control" name="limits"
+                            placeholder="Limits if any">
+                    </div>
+                    <div class="mb-3">
+                        <label for="security_cheque" class="form-label">SECURITY CHEQUE NO.<span class="star">
+                                *</span></label>
+                        <input id="security_cheque" type="text" class="form-control" name="security_cheque"
+                            placeholder="Enter Security Cheque Number E.g.: 123456" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pdc_cheque" class="form-label">PDC CHEQUE SUBMITTED NO.<span class="star">
+                                *</span></label>
+                        <input id="pdc_cheque" type="text" class="form-control" name="pdc_cheque"
+                            placeholder="Enter PDC Cheque Number E.g.: 654321" required>
+                    </div>
+                    <div id="bankErrors" class="error-messages mb-3" style="display: none;"></div>
+                </div>
+                <!-- Warning -->
+                <div class="m-5 alert alert-warning alert-dismissible fade show">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <p><small>Please provide two major existing suppliers of your company</small></p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3 form-section">
+                    <h4 class="mb-0">Suppliers</h4>
+                    <ul class="breadcrumb mb-0">
+                        <li class="breadcrumb-item active" id="supplier_breadcrumb1" role="button">1</li>
+                        <li class="breadcrumb-item" id="supplier_breadcrumb2" role="button">2</li>
+                    </ul>
+                </div>
+                <!-- Supplier 1 -->
+                <div class="supplier1 form-section">
+                    <div class="mb-3">
+                        <label for="supplier1_name" class="form-label">COMPANY NAME<span class="star">*</span></label>
+                        <input type="text" id="supplier1_name" class="form-control" name="supplier1_name" placeholder="E.g.: Amara Raja Ltd" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier1_address" class="form-label">ADDRESS<span class="star">*</span></label>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="supplier1_address" name="supplier1_address"
+                                required></textarea>
+                            <label for="supplier1_address">Company Address</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier1_phone" class="form-label">PHONE<span class="star">*</span></label>
+                        <input type="tel" id="supplier1_phone" class="form-control" name="supplier1_phone" placeholder="E.g.: 9876543210" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier1_contact" class="form-label">CONTACT PERSON<span
+                                class="star">*</span></label>
+                        <input type="text" id="supplier1_contact" class="form-control" name="supplier1_contact"
+                            placeholder="E.g.: Alice Brown" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier1_payment" class="form-label">PAYMENT TERMS</label>
+                        <input type="text" id="supplier1_payment" class="form-control" name="supplier1_payment" placeholder="E.g.: Net 30">
+                    </div>
+                    <div id="supplier1Errors" class="error-messages mb-1" style="display: none;"></div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextToSupplier2">Next</button>
+                    </div>
+                </div>
+
+                <!-- Supplier 2 -->
+                <div class="supplier2 form-section" style="display: none;">
+                    <div class="mb-3">
+                        <label for="supplier2_name" class="form-label">COMPANY NAME<span class="star">*</span></label>
+                        <input type="text" id="supplier2_name" class="form-control" name="supplier2_name" placeholder="E.g.: Amara Raja Ltd" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier2_address" class="form-label">ADDRESS<span class="star">*</span></label>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="supplier2_address" name="supplier2_address"
+                                required></textarea>
+                            <label for="supplier2_address">Company Address</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier2_phone" class="form-label">PHONE<span class="star">*</span></label>
+                        <input type="tel" id="supplier2_phone" class="form-control" name="supplier2_phone" placeholder="E.g.: 7654321034" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier2_contact" class="form-label">CONTACT PERSON<span
+                                class="star">*</span></label>
+                        <input type="text" id="supplier2_contact" class="form-control" name="supplier2_contact" placeholder="E.g.: Bob White"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="supplier2_payment" class="form-label">PAYMENT TERMS</label>
+                        <input type="text" id="supplier2_payment" class="form-control" name="supplier2_payment" placeholder="E.g.: Net 45">
+                    </div>
+                    <div id="supplier2Errors" class="error-messages mb-1" style="display: none;"></div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="backToSupplier1">Previous</button>
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 7: Declaration -->
+            <div class="form-step form-section">
+                <h5>Declaration</h5>
+                <div class="mb-3">
+                    <label for="designation" class="form-label">Designation<span class="star">*</span></label>
+                    <input type="text" class="form-control" id="designation" name="designation" placeholder="E.g.: Director" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date<span class="star">*</span></label>
+                    <input type="date" class="form-control" id="date" name="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sign" class="form-label">Sign&Seal<span class="star">*</span></label>
+                    <input type="file" class="form-control" id="sign" accept="image/*" name="sign" required>
+                </div>
+                <div class="form-check my-3">
+                    <input class="form-check-input" type="checkbox" value="agree" id="declaration" required>
+                    <label class="form-check-label" for="declaration">
+                        I hereby declare that the above information is true to the best of my knowledge.
+                    </label>
+                </div>
+                <div id="declarationErrors" class="error-messages text-danger mb-3" style="display: none;"></div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                    <button type="button" class="btn btn-primary next-btn">Next</button>
+                </div>
+            </div>
+
+            <!-- STEP 8: Sales -->
+            <div class="form-step form-section">
+                <h4 class="mb-3">Sales Information <small>(To be filled by HBL Sales Executive)</small></h4>
+                <div class="mb-3">
+                    <label for="requesting_branch" class="form-label">REQUESTING BRANCH<span class="star">
+                            *</span></label>
+                    <input type="text" class="form-control" id="requesting_branch" name="requesting_branch" placeholder="E.g.: Mumbai Branch" required>
+                </div>
+                <div class="mb-3">
+                    <label for="division" class="form-label">SEGMENT/DIVISION<span class="star"> *</span></label>
+                    <input type="text" class="form-control" id="division" name="division" placeholder="E.g.: Industrial" required>
+                </div>
+                <div class="mb-3">
+                    <label for="credit_limit_req" class="form-label">CREDIT LIMIT REQ<span class="star">
+                            *</span></label>
+                    <input type="text" class="form-control" id="credit_limit_req" name="credit_limit_req" placeholder="E.g.: 500000" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sales_head" class="form-label">REGIONAL SALES HEAD<span class="star"> *</span></label>
+                    <input type="text" class="form-control" id="sales_head" name="sales_head" placeholder="E.g.: Michael Green" required>
+                </div>
+                <div class="mb-3">
+                    <label for="sales_ho" class="form-label">SALES H.O<span class="star"> *</span></label>
+                    <input type="text" class="form-control" id="sales_ho" name="sales_ho" placeholder="E.g: David Black" required>
+                </div>
+                <div class="mb-3">
+                    <label for="estm" class="form-label">ESTM T.O DURING FY<span class="star"> *</span></label>
+                    <input type="text" class="form-control" id="estm" name="estm" placeholder="E.g.: 1000" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Requests" class="form-label">REQUESTS</label>
+                    <div class="form-floating">
+                        <textarea class="form-control" id="Requests" name="Requests"></textarea>
+                        <label for="requests">Any Other Special Instructions/ Notes/ Recommendations / Requirements /
+                            Requests</label>
+                    </div>
+                </div>
+
+                <div id="salesInfoErrors" class="error-messages text-danger mb-3" style="display: none;"></div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                    <button type="button" class="btn btn-primary next-btn">Next</button>
+                </div>
+            </div>
+
+            <!-- STEP 9: Accounts -->
+            <div class="form-step form-section">
+                <h4 class="mb-3">Accounts Information <small>(To be filled by HBL Accounts Department)</small></h4>
+                <div class="mb-3">
+                    <label for="code_number" class="form-label">CODE NO<span class="star"> *</span></label>
+                    <input type="text" class="form-control" id="code_number" name="code_number" placeholder="E.g.: CUST123" required>
+                </div>
+                <div class="mb-3">
+                    <label for="existing_code" class="form-label">EXISTING CODE</label>
+                    <input type="text" class="form-control" id="existing_code" name="existing_code"
+                        placeholder="Code(s) at present if any">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">CREDIT LIMIT:<span class="star"> *</span></label><br>
+                    <input type="radio" class="form-check-input" name="credit_limit_radio" value="yes" id="yes">
+                    <label for="yes">Yes</label>
+                    <input type="radio" class="form-check-input" name="credit_limit_radio" value="no" id="no"
+                        class="ms-3">
+                    <label for="no">No</label>
+                </div>
+                <div class="mt-3" id="creditDetails" style="display: none;">
+                    <div class="mb-3">
+                        <label for="cummulative" class="form-label">CUMMULATIVE<span class="star"> *</span></label>
+                        <input type="text" class="form-control" id="Cummulative" name="Cummulative"
+                            placeholder="Total Cummulative Credit Limit Exposed E.g.: 600">
+                    </div>
+                    <div class="mb-3">
+                        <label for="credit_limit_amount" class="form-label">CREDIT LIMIT <small>(lacs)</small><span
+                                class="star"> *</span></label>
+                        <input type="text" class="form-control" id="credit_limit_amount" name="credit_limit_amount"
+                            placeholder="Enter credit limit (Rs.) E.g.: 500">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="account_request" class="form-label">REQUESTED BY<span class="star"> *</span></label>
+                        <input type="text" class="form-control" id="account_request" name="account_request" required
+                            pattern="[A-Za-z\s]+" placeholder="E.g.: Accountant" title="Only letters allowed">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="account_request_name" class="form-label">NAME<span class="star"> *</span></label>
+                        <input type="text" class="form-control" id="account_request_name" name="account_request_name"
+                            required pattern="[A-Za-z\s]+" placeholder="E.g.: Sarah Wilson" title="Only letters allowed">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="account_authorized" class="form-label">AUTHORIZED BY<span class="star">
+                                *</span></label>
+                        <input type="text" class="form-control" id="account_authorized" name="account_authorized"
+                            required pattern="[A-Za-z\s]+" placeholder="E.g.: Manager" title="Only letters allowed">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="account_authorized_name" class="form-label">NAME<span class="star"> *</span></label>
+                        <input type="text" class="form-control" id="account_authorized_name"
+                            name="account_authorized_name" required pattern="[A-Za-z\s]+" placeholder="E.g.: James Lee"
+                            title="Only letters allowed">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="account_checked" class="form-label">CHECKED BY<span class="star"> *</span></label>
+                        <input type="text" class="form-control" id="account_checked" name="account_checked" required
+                            pattern="[A-Za-z\s]+" placeholder="E.g.: Auditor" title="Only letters allowed">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="account_checked_name" class="form-label">NAME<span class="star"> *</span></label>
+                        <input type="text" class="form-control" id="account_checked_name" name="account_checked_name"
+                            required pattern="[A-Za-z\s]+" placeholder="E.g.: Emma Davis" title="Only letters allowed">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="credit_approved" class="form-label">CREDIT LIMIT APPROVED BY<span class="star">
+                                *</span></label>
+                        <input type="text" class="form-control" id="credit_approved" name="credit_approved" required
+                            pattern="[A-Za-z\s]+" title="Only letters allowed" placeholder="E.g.: Finance Head">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="credit_limit" class="form-label">CREDIT LIMIT<span class="star">
+                                *</span></label>
+                        <input type="number" class="form-control" id="credit_limit" name="credit_limit"
+                            title="Credited Ammount In lacs" placeholder="In lacs" required>
+                    </div>
+                </div>
+                <div id="accountsInfoErrors" class="error-messages text-danger mb-3" style="display: none;"></div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-btn">Previous</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
