@@ -1,6 +1,6 @@
-# HBL Customer Form Project
+# Digital Dealer Enrollment Process for B2B Operations
 
-This project is a web application for **HBL Engineering Ltd.**, a product-selling company, to manage customer onboarding. It includes:
+This project is a web application to manage customer onboarding. It includes:
 
 - A **frontend** (HTML, CSS, JavaScript) for form submission
 - A **backend** (Node.js/Express) for handling data
